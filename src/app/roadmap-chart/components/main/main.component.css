@@ -1,0 +1,41 @@
+.row-axis {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    text-align: center;
+    background-color:rgb(245,245,245);
+    border: 1px solid rgb(245,245,245);
+    border-bottom: 1px solid rgb(172, 165, 165);
+  }
+  
+  .row-axis   .row-title {
+    font-weight:bold;
+    width: 120px;
+    text-align: center;
+    /* padding-right: 1rem;
+    padding-left: 1rem;  */
+  
+  
+  }
+  
+  .row-axis  .month-axis {
+    font-weight: bold;
+    position: relative;
+    display:flex;
+    width: 100%;
+    align-items: stretch;
+  }
+  
+  .row-axis  .month-axis    .month {
+    margin:auto;
+    height:100%;
+    /* border-right:$header-border; */
+    border-right: 1px solid rgb(172, 165, 165);
+    
+  }
+  
+  .row-axis  .month-axis   .month:first-child {
+    /* border-left:$header-border; */
+    border-left:2px solid #dcdfe1;
+  }
+  

@@ -1,0 +1,48 @@
+.gantt-chart-row {
+    display: flex;
+    flex-direction: row;
+    overflow: visible;
+}
+
+  .infoi {   
+    position: absolute; 
+    z-index: 100000;
+    background-color: rgb(247, 166, 166);
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+    display: none;
+    width: 200px;
+  }
+
+  .description:hover .infoi {
+    display: block;
+}
+
+.gantt-chart-row    .row-title {
+    font-weight:bold;
+    width: 120px;
+    text-align: center;
+}
+
+.tooltip-text {
+    display: none;
+}
+
+.gantt-chart-row     .row-events {
+    /* position: relative; */
+    display:flex;
+    align-items: center;
+    width: 100%;
+ 
+}
+
+.grid-lines {
+    display:flex;
+    width:100%;
+    height: 100%;   
+  }
+  
+  .grid-lines  .grid-line {
+    border-right:1px solid rgb(245,245,245);
+  }

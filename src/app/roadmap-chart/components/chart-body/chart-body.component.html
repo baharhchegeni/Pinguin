@@ -1,0 +1,47 @@
+<ng-container *ngFor="let row of (jiraStateService.selectedIssues$ | async) ; let i = index">
+
+    <ng-container *ngIf="row?.label?.toLocaleLowerCase() !== 'roadmap'">
+   
+        <div class="gantt-chart-row" style="position: relative;">
+            <div class="row-title"
+                style="background-color: rgb(245, 245, 245);border: 1px solid rgb(228, 214, 214);padding: 7px; ">
+                <div>{{row?.label}} </div>
+            </div>
+        
+            <div class="row-events" style="border: 1px solid rgb(245, 245, 245);position: relative; ">
+                <div class="grid-lines">
+                    <span class="grid-line" *ngFor="let month of (jiraStateService?.months$ | async) "
+                        [style.width]="month.monthDurationPercentage + '%'"></span>
+                </div>
+
+             
+                <div style="height: 20px;position: absolute;border-radius: 10px;"
+                    *ngFor="let event of row.events;let ind = index; "
+                    [style.margin-left]="getEventOffsetPercentage(event.startDate)+'%'"
+                    [style.width]="getEventDurationPercentage(event) + '%'" [style.background]="getColour(i)">              
+                    <div class="description" style="height: 100%;">
+                        <span class="event-name"></span>
+                        <div class="infoi">
+                            <div>
+                              
+                            </div>
+                            <div>
+                                Key: {{ event?.key}}
+                            </div>
+                            <div>
+                                StartDate: {{ event.startDate | date: 'dd-MM-yyyy' }}
+                            </div>
+                            <div>
+                                EndDate: {{ event.endDate | date: 'dd-MM-yyyy' }}
+                            </div>
+                            <div>
+                                Summary: {{ event.summary }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </ng-container>
+</ng-container>

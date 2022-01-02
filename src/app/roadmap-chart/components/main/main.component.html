@@ -1,0 +1,21 @@
+<div >  
+    <div style="background-color: rgb(245,245,245);text-align: center;border-bottom: 1px solid rgb(172, 165, 165);padding: 5px;">
+    <span  ><strong>{{(jiraStateService.chartState$| async)?.jiraData?.startDate?.getFullYear()}}</strong></span>
+    </div>
+    <div class="row-axis">
+       <div class="row-title">
+          <!-- Activities -->
+          <select style="width: '100px'" (change)="onChange($event)">  
+              <option value="">---</option>    
+             <option *ngFor="let l of  (jiraStateService.chartState$| async)?.jiraData?.labels" value={{l}} >{{l}}</option>
+          </select>
+       </div>
+       
+       <div class="month-axis" style="background-color: rgb(245,245,245);"  >
+          <span class="month" style="padding: 4px;" *ngFor="let month of (jiraStateService.months$ | async)" [style.width]="month.monthDurationPercentage + '%'">
+             {{month.monthName}} </span>
+       </div>
+    </div> 
+    <app-chart-body  [totalDaysOfAllMonths]="totalDaysOfAllMonths" [periodStartDate]="periodStartDate" ></app-chart-body>
+ </div>
+ 

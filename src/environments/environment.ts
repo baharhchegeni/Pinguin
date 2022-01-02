@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false, 
+  //apiEndpoint: "https://jira.atlassian.com/rest/api/2/issue/JRA-9"
+  apiEndpoint:"https://pinguintest.atlassian.net/rest/api/2/issue/JRA-9"
 };
 
 /*
