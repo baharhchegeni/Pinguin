@@ -33,11 +33,11 @@ export const APP_DI_CONFIG: AppConfig = {
     CommonModule
   ],
   providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: HttpMockApiInterceptor,
-    //   multi: true
-    // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpMockApiInterceptor,
+      multi: true
+    },
     {
       provide: APP_CONFIG,
       useValue: APP_DI_CONFIG
